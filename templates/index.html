@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGORITMO GENETICO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: hsl(0, 0%, 96%);
+            background-image: url('https://th.bing.com/th/id/R.f6432cdabc891d0bcaa2a77189179e5f?rik=%2bBnLm7cz0K2nwg&pid=ImgRaw&r=0');
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color:#2980B9;
+            margin-top: 80px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #5499C7;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #AED6F1;
+        }
+
+        h2, p {
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Algoritmo Genético:</h1>
+    <form action="/" method="post">
+        <label for="max_iter">Número de Iteraciones:</label>
+        <input type="number" name="max_iter" required>
+
+        <label for="max_poblacion">Tamaño de Población:</label>
+        <input type="number" name="max_poblacion" required>
+
+        <label for="num_vars">Número de Variables:</label>
+        <input type="number" name="num_vars" required>
+
+        <input type="submit" value="Ejecutar Algoritmo">
+    </form>
+
+    {% if resultado %}
+    <h2>Mejor Gen Encontrado: {{ resultado }}</h2>
+    <p>Función de Adaptación: {{ funcion }}</p>
+    {% endif %}
+</body>
+</html>
